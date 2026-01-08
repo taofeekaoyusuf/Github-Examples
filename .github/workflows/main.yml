@@ -1,0 +1,12 @@
+name: Scheduled Task
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+jobs:
+  task-output:
+    runs-on: ubuntu-latest
+    name: A Server time printing job
+    steps:
+      - name: Echo current time
+        run: echo "The current server-time is $(date)"
+    

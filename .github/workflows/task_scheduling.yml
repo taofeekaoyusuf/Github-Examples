@@ -1,7 +1,7 @@
 name: Scheduled Task
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '*/2 * * * *'
 jobs:
   task_output:
     runs-on: ubuntu-latest

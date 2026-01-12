@@ -38,7 +38,7 @@ jobs:
 
       - name: Parse JSON string
         run: |
-          echo "Parsed JSON: ${{ fromJSON('{\"hello\":\"world\"}').hello }}"
+          echo "Parsed JSON: ${{ fromJSON('{"hello":"world"}').hello }}"
 
       - name: Hash files
         run: |

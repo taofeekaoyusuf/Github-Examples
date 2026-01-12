@@ -15,3 +15,18 @@ on:
                 description: 'Base64 encoded content of file'
                 required: false
                 type: string
+
+jobs:
+    manual-input-event:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Decode File Content
+              run: | 
+                echo "${{ inputs.data }}" | base64 --decode > ./decoded_file.txt
+            - name: Display Greeting
+              run: |
+                echo "${{ inputs.greeting }}, ${{ inputs.names }}!"
+            - name: Display File Content
+              run: | 
+                echo "Contents of the File are as follow: "
+                cat ./decoded_file.txt

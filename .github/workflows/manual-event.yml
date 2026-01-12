@@ -1,0 +1,17 @@
+name: manual-event-trigger
+
+on:
+    workflow_dispatch:
+        inputs:
+            names:
+                description: 'Name of the person to greet'
+                required: true
+                type: string
+            greeting:
+                description: 'Type of greeting'
+                required: true
+                type: string
+            data:
+                description: 'Base64 encoded content of file'
+                required: false
+                type: string

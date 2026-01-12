@@ -1,0 +1,16 @@
+name: Conditional Workflow
+
+on: [push]
+
+jobs:
+    conditional-trigger:
+        if: github.repository == 'octo-org/octo-repo-prod'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Islamic Greeting"
+              run: 'echo "Salaam alaykum"'
+    ciao:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Hard to say Bye"
+              run: echo "Fi-amani-llaah!"

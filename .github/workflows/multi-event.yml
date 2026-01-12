@@ -1,0 +1,22 @@
+name: multi-event-task
+
+on:
+  push:
+    branches:
+        - main
+        - dev
+  pull_request:
+    branches:
+        - main
+        - dev
+
+jobs:
+    basic_info:
+        run-on: ubuntu-latest
+        steps:
+            - name: "Printing Basic Information"
+              run: |
+                echo "REF: $GITHUB_REF"
+                echo "JOB ID: $GITHUB_JOB"
+                echo "ACTION: $GITHUB_ACTION" 
+                echo "ACTOR: $GITHUB_ACTOR"

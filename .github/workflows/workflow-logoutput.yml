@@ -20,5 +20,5 @@ jobs:
             
             - name: "Use Output" 
               run: |
-                echo "My NoPass Value is $GITHUB_NOPASS_WORD"
+                echo "My NoPass Value is as follows: {{ $GITHUB_NOPASS_WORD }}"
                 echo "You heard!!!"

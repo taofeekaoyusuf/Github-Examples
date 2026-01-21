@@ -1,0 +1,17 @@
+name: Context Workflow
+
+on: push
+
+jobs:
+    my-context:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Use Secret as Env Var
+              run: |
+                echo "My Secret Value: ${MY_SECRET}"
+                echo "My Action Value: "${MY_ACTION}
+                echo "My Actor Value: "${MY_ACTOR}
+              env:
+                MY_SECRET: ${{ secrets.MY_SECRET }}
+                MY_ACTION: ${{ GITHUB.ACTION }}
+                MY_ACTOR: ${{ GITHUB.ACTOR }}

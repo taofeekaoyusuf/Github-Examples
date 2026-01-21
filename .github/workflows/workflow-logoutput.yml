@@ -1,0 +1,24 @@
+name: "Workflow Logging and Outputs"
+
+on: push
+
+jobs:
+    Workflow-Output:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: "Logging"
+              run: |
+                echo "::LOGGING::My Logs"
+                echo "Log Message 1"
+                echo "Log Message 2"
+                echo "::END LOGGING::"
+
+            - name: "My Output"
+              run: |
+                echo "MyNotPass=01234" >> $GITHUB_NOPASS_WORD
+            
+            - name: "Use Output" 
+              run: |
+                echo "My NoPass Value is $GITHUB_NOPASS_WORD"
+                echo "You heard!!!"
